@@ -356,5 +356,6 @@
     $('#activity-form').addEventListener('submit', event => { event.preventDefault(); const rawDate = $('#new-date').value; const activity = { id: Date.now(), icon: icons[$('#new-type').value], title: $('#new-title').value, type: $('#new-type').value, description: $('#new-description').value, date: formatDate(rawDate), month: monthFromDate(rawDate), time: $('#new-time').value, place: $('#new-place').value, audience: $('#new-audience').value, spots: 'Vagas a confirmar' }; activities.push(activity); storage.set('conecta-acao-activities', activities); event.currentTarget.reset(); $('#activity-dialog').close(); renderActivities(); renderFeatured(); renderAdmin(); });
     renderActivities(); renderFeatured(); renderAdmin();
   </script>
+   <script src="fix-participacao.js"></script>
 </body>
 </html>
