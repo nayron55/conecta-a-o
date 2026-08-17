@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conecta Ação: portal de projetos, cursos, oficinas e eventos da comunidade.">
+  <title>Conecta Ação | Comunidade em movimento</title>
+  <style>
+    :root {
+      --navy: #082b49;
+      --navy-dark: #041a2c;
+      --green: #007a61;
+      --green-dark: #005642;
+      --yellow: #ffd55c;
+      --cream: #f6f8f7;
+      --ink: #102333;
+      --muted: #527080;
+      --line: #c7d6d4;
+      --white: #ffffff;
+      --danger: #a62d2d;
+      --shadow: 0 12px 30px rgba(4, 26, 44, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: Inter, Arial, Helvetica, sans-serif; line-height: 1.55; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; background: var(--yellow); color: var(--navy-dark); font-weight: 800; padding: .7rem 1rem; border-radius: .4rem; z-index: 100; }
+    .skip-link:focus { top: 1rem; }
+    .container { width: min(1160px, calc(100% - 2.5rem)); margin-inline: auto; }
+    .section { padding: 5.5rem 0; }
+    .section--white { background: var(--white); }
+    .eyebrow { display: inline-flex; align-items: center; gap: .45rem; color: var(--green-dark); font-size: .9rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; height: .65rem; width: .65rem; border-radius: 99px; background: var(--green); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { color: var(--navy-dark); line-height: 1.15; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.7rem); letter-spacing: -.045em; margin-bottom: 1.25rem; }
+    h2 { font-size: clamp(1.8rem, 3.3vw, 3rem); letter-spacing: -.035em; margin-bottom: .9rem; }
+    h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+    .lead { max-width: 58ch; font-size: clamp(1.06rem, 1.5vw, 1.25rem); color: #314b5a; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; gap: .55rem; padding: .75rem 1.1rem; border: 2px solid transparent; border-radius: .55rem; cursor: pointer; font-weight: 800; text-decoration: none; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    .btn--primary { color: var(--white); background: var(--green); }
+    .btn--primary:hover { background: var(--green-dark); }
+    .btn--dark { color: var(--white); background: var(--navy); }
+    .btn--outline { color: var(--navy); border-color: var(--navy); background: transparent; }
+    .btn--light { color: var(--navy-dark); background: var(--yellow); }
+    .btn--small { min-height: 2.55rem; padding: .55rem .85rem; font-size: .94rem; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); box-shadow: 0 2px 13px rgba(4,26,44,.11); backdrop-filter: blur(12px); }
+    .nav { min-height: 4.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .65rem; font-weight: 900; color: var(--navy-dark); text-decoration: none; font-size: 1.2rem; white-space: nowrap; }
+    .brand-mark { width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border-radius: 50% 50% 50% 12%; color: var(--white); background: var(--green); font-size: 1.18rem; transform: rotate(-20deg); }
+    .nav-links { display: flex; align-items: center; gap: 1.1rem; }
+    .nav-links a { color: var(--navy); font-weight: 750; text-decoration: none; }
+    .nav-links a:hover { color: var(--green-dark); text-decoration: underline; text-underline-offset: .3rem; }
+    .menu-toggle { display: none; color: var(--navy); background: var(--white); border: 2px solid var(--navy); border-radius: .45rem; min-height: 2.7rem; padding: .35rem .65rem; font-weight: 800; cursor: pointer; }
+    .hero { color: var(--white); padding: clamp(4.3rem, 8vw, 7rem) 0; background: linear-gradient(124deg, var(--navy-dark) 0%, var(--navy) 55%, #096e68 130%); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 3.5rem; }
+    .hero h1 { color: var(--white); }
+    .hero .lead { color: #e1f0ec; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.8rem; }
+    .hero-card { padding: 1.7rem; border: 1px solid rgba(255,255,255,.26); border-radius: 1.1rem; background: rgba(255,255,255,.1); box-shadow: var(--shadow); }
+    .hero-card h2 { color: var(--white); font-size: 1.45rem; }
+    .impact-list { list-style: none; padding: 0; margin: 1.35rem 0 0; }
+    .impact-list li { display: flex; gap: .7rem; align-items: start; padding: .75rem 0; border-top: 1px solid rgba(255,255,255,.2); }
+    .impact-list strong { display: block; color: var(--yellow); font-size: 1.35rem; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2rem; }
+    .section-heading .lead { margin-bottom: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: .85rem; overflow: hidden; box-shadow: 0 2px 8px rgba(4,26,44,.04); }
+    .card-body { padding: 1.2rem; }
+    .activity-image { height: 8.5rem; display: grid; place-items: center; color: var(--white); font-size: 3.25rem; background: linear-gradient(125deg, var(--navy), var(--green)); }
+    .tag { display: inline-block; margin-bottom: .65rem; padding: .22rem .55rem; background: #dff3ed; color: #064f40; border-radius: 99px; font-size: .78rem; font-weight: 850; }
+    .card p { color: #385464; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin-top: 1rem; }
+    .meta { color: var(--muted); font-size: .9rem; font-weight: 650; }
+    .about-grid, .contact-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(2rem, 6vw, 5.2rem); }
+    .about-points { display: grid; gap: .85rem; }
+    .about-point { display: flex; gap: 1rem; padding: 1rem; border-left: 5px solid var(--green); background: #eaf4f1; }
+    .about-point b { display: block; color: var(--navy-dark); margin-bottom: .15rem; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .stat { padding: 1.4rem; border-radius: .8rem; background: var(--navy); color: var(--white); }
+    .stat strong { display: block; color: var(--yellow); font-size: 2.1rem; line-height: 1; margin-bottom: .4rem; }
+    .filters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.25rem; margin-bottom: 1.75rem; border: 1px solid var(--line); border-radius: .8rem; background: #eaf4f1; }
+    label { display: block; font-weight: 800; color: var(--navy-dark); margin-bottom: .38rem; }
+    select, input, textarea { display: block; width: 100%; min-height: 3rem; padding: .65rem .75rem; border: 2px solid #a7c0be; border-radius: .45rem; color: var(--ink); background: var(--white); }
+    textarea { min-height: 7rem; resize: vertical; }
+    .activities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem; }
+    .activity-card { display: flex; flex-direction: column; }
+    .activity-card .card-body { flex: 1; }
+    .activity-details { display: grid; gap: .5rem; margin: 1rem 0; color: #31505e; font-size: .92rem; }
+    .activity-details span { display: flex; gap: .45rem; }
+    .activity-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: auto; }
+    .empty { grid-column: 1 / -1; padding: 2rem; text-align: center; border: 2px dashed var(--line); border-radius: .7rem; color: var(--muted); }
+    .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem; }
+    .help-card { padding: 1.5rem; border-radius: .85rem; background: var(--white); border: 1px solid var(--line); }
+    .help-icon { width: 3rem; height: 3rem; display: grid; place-items: center; margin-bottom: 1rem; border-radius: 50%; background: var(--yellow); font-size: 1.5rem; }
+    .contact-links { display: grid; gap: .7rem; }
+    .contact-link { display: flex; gap: .85rem; align-items: center; min-height: 4rem; padding: .8rem; text-decoration: none; border: 1px solid var(--line); border-radius: .65rem; background: var(--white); }
+    .contact-link:hover { border-color: var(--green); background: #f3fbf8; }
+    .contact-icon { width: 2.5rem; height: 2.5rem; display: grid; flex: 0 0 auto; place-items: center; border-radius: .45rem; background: var(--navy); color: var(--white); font-weight: 900; }
+    .contact-link b, .contact-link small { display: block; }
+    .contact-link small { color: var(--muted); }
+    form { display: grid; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-note { color: var(--muted); font-size: .9rem; }
+    .site-footer { padding: 2.2rem 0; color: #d7e8e4; background: var(--navy-dark); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+    .footer-inner p { margin: 0; }
+    .admin-link { color: #d7e8e4; }
+    dialog { width: min(680px, calc(100% - 2rem)); padding: 0; border: 0; border-radius: .85rem; box-shadow: 0 25px 80px rgba(0,0,0,.4); }
+    dialog::backdrop { background: rgba(2, 16, 28, .72); }
+    .modal-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; padding: 1.35rem 1.35rem 1rem; color: var(--white); background: var(--navy); }
+    .modal-head h2 { margin: 0; color: var(--white); font-size: 1.55rem; }
+    .modal-close { width: 2.35rem; height: 2.35rem; cursor: pointer; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; background: transparent; color: var(--white); font-size: 1.3rem; }
+    .modal-body { padding: 1.35rem; }
+    .modal-actions { display: flex; justify-content: end; gap: .75rem; margin-top: .4rem; }
+    .notice { display: none; padding: .85rem 1rem; margin-bottom: 1rem; border-radius: .45rem; background: #dff3ed; color: #075442; font-weight: 750; }
+    .notice.is-visible { display: block; }
+    .admin-panel { display: none; padding: 1.5rem; margin-top: 1.25rem; border-radius: .85rem; background: #eef7f5; border: 1px solid #9fc7c0; }
+    .admin-panel.is-visible { display: block; }
+    .admin-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.2rem 0; }
+    .admin-summary div { padding: 1rem; background: var(--white); border-radius: .55rem; }
+    .admin-summary strong { display: block; color: var(--green-dark); font-size: 1.65rem; }
+    .admin-controls { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.2rem; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: var(--white); }
+    th, td { padding: .75rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--navy-dark); background: #e5f2ee; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 820px) {
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 4.8rem; left: 0; right: 0; padding: 1rem 1.25rem; background: var(--white); box-shadow: 0 8px 14px rgba(4,26,44,.12); flex-direction: column; align-items: stretch; }
+      .nav-links.is-open { display: flex; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .cards, .activities, .help-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-heading { display: block; }
+      .section-heading .btn { margin-top: 1rem; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 1.4rem, 1160px); }
+      .section { padding: 3.8rem 0; }
+      .cards, .activities, .help-grid, .filters, .form-row, .stats, .admin-summary { grid-template-columns: 1fr; }
+      .card-footer, .footer-inner { align-items: start; flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Navegação principal">
+      <a href="#inicio" class="brand" aria-label="Conecta Ação - página inicial"><span class="brand-mark" aria-hidden="true">↗</span>Conecta Ação</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">☰ Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#atividades">Atividades</a>
+        <a href="#como-ajudar">Como Ajudar</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" style="color:#9cf2d8">Comunidade em movimento</span>
+          <h1>Conectando pessoas a ações que transformam a comunidade.</h1>
+          <p class="lead">Encontre projetos, cursos, oficinas e eventos perto de você. Informações simples, participação fácil e mais oportunidades para todos.</p>
+          <div class="hero-actions">
+            <a class="btn btn--light" href="#atividades">Ver atividades <span aria-hidden="true">↓</span></a>
+            <button class="btn btn--outline" style="color:white;border-color:white" type="button" data-open-register>Quero participar</button>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Impacto da organização">
+          <h2>Uma rede que aproxima</h2>
+          <ul class="impact-list">
+            <li><strong>6</strong><span>atividades de exemplo para você conhecer</span></li>
+            <li><strong>100%</strong><span>informação acessível em um só lugar</span></li>
+            <li><strong>1 clique</strong><span>para se inscrever ou falar com a organização</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="destaques-titulo">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">Participe</span><h2 id="destaques-titulo">Atividades em destaque</h2><p class="lead">Escolha uma oportunidade e dê o próximo passo para participar.</p></div>
+          <a class="btn btn--outline" href="#atividades">Todas as atividades</a>
+        </div>
+        <div class="cards" id="featured-activities"></div>
+      </div>
+    </section>
+
+    <section class="section" id="quem-somos" aria-labelledby="quem-titulo">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">Quem somos</span>
+          <h2 id="quem-titulo">Tecnologia, acolhimento e participação social.</h2>
+          <p class="lead">O Conecta Ação reúne as iniciativas de uma organização social comprometida com oportunidades de aprendizagem, cidadania e fortalecimento da comunidade.</p>
+          <div class="about-points">
+            <div class="about-point"><span aria-hidden="true">◎</span><div><b>Nossa missão</b>Ampliar o acesso a ações sociais e educativas por meio de informação clara e acolhedora.</div></div>
+            <div class="about-point"><span aria-hidden="true">◎</span><div><b>Nossa visão</b>Uma comunidade conectada, participativa e com mais oportunidades para todas as pessoas.</div></div>
+            <div class="about-point"><span aria-hidden="true">◎</span><div><b>Nossos valores</b>Respeito, inclusão, transparência, colaboração e compromisso social.</div></div>
+          </div>
+        </div>
+        <div class="stats" aria-label="Indicadores de impacto de exemplo">
+          <div class="stat"><strong>240+</strong>Pessoas impactadas<br><small>Dados demonstrativos</small></div>
+          <div class="stat"><strong>18</strong>Voluntários ativos<br><small>Dados demonstrativos</small></div>
+          <div class="stat"><strong>12</strong>Parceiros locais<br><small>Dados demonstrativos</small></div>
+          <div class="stat"><strong>4</strong>Áreas de atuação<br><small>Educação, cultura, apoio e cidadania</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="atividades" aria-labelledby="atividades-titulo">
+      <div class="container">
+        <span class="eyebrow">Agenda da comunidade</span>
+        <h2 id="atividades-titulo">Encontre a atividade ideal para você</h2>
+        <p class="lead">Use os filtros para localizar oportunidades conforme seu interesse e público.</p>
+        <div class="filters" aria-label="Filtros de atividades">
+          <div><label for="filter-type">Tipo de atividade</label><select id="filter-type"><option value="">Todos os tipos</option><option>Curso</option><option>Oficina</option><option>Evento</option><option>Voluntariado</option><option>Projeto</option></select></div>
+          <div><label for="filter-date">Período</label><select id="filter-date"><option value="">Todas as datas</option><option value="setembro">Setembro</option><option value="outubro">Outubro</option><option value="novembro">Novembro</option></select></div>
+          <div><label for="filter-audience">Público</label><select id="filter-audience"><option value="">Todos os públicos</option><option>Crianças</option><option>Jovens</option><option>Adultos</option><option>Famílias</option><option>Comunidade</option></select></div>
+        </div>
+        <p class="meta" id="activity-count" aria-live="polite"></p>
+        <div class="activities" id="activity-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="como-ajudar" aria-labelledby="ajudar-titulo">
+      <div class="container">
+        <span class="eyebrow">Faça parte</span>
+        <h2 id="ajudar-titulo">Há muitas formas de ajudar</h2>
+        <div class="help-grid">
+          <article class="help-card"><div class="help-icon" aria-hidden="true">♥</div><h3>Doações</h3><p>Ajude a manter cursos, materiais e ações para quem mais precisa.</p><a class="btn btn--primary" href="#contato">Quero doar</a></article>
+          <article class="help-card"><div class="help-icon" aria-hidden="true">✦</div><h3>Voluntariado</h3><p>Compartilhe seu tempo e seus conhecimentos em nossas atividades.</p><a class="btn btn--primary" href="#atividades">Ser voluntário</a></article>
+          <article class="help-card"><div class="help-icon" aria-hidden="true">↔</div><h3>Empresas parceiras</h3><p>Construa uma parceria que gere impacto positivo no território.</p><a class="btn btn--primary" href="#contato">Quero ser parceiro</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="contato" aria-labelledby="contato-titulo">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Contato</span>
+          <h2 id="contato-titulo">Fale com a gente</h2>
+          <p class="lead">Escolha o canal mais confortável para você. Os dados abaixo são exemplos e devem ser substituídos pelos dados reais da organização.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20atividades." target="_blank" rel="noopener"><span class="contact-icon">W</span><span><b>WhatsApp</b><small>(44) 99999-9999</small></span></a>
+            <a class="contact-link" href="https://instagram.com/" target="_blank" rel="noopener"><span class="contact-icon">◎</span><span><b>Instagram</b><small>@conectaacao.exemplo</small></span></a>
+            <a class="contact-link" href="https://facebook.com/" target="_blank" rel="noopener"><span class="contact-icon">f</span><span><b>Facebook</b><small>Conecta Ação</small></span></a>
+            <a class="contact-link" href="https://maps.google.com/?q=Av.+Exemplo,+1200,+Maring%C3%A1+-+PR" target="_blank" rel="noopener"><span class="contact-icon">⌖</span><span><b>Como chegar</b><small>Av. Exemplo, 1200 — Maringá/PR</small></span></a>
+          </div>
+        </div>
+        <div class="card"><div class="card-body"><h3>Envie uma mensagem</h3><p class="form-note">Retornaremos assim que possível.</p><div class="notice" id="contact-notice" role="status"></div><form id="contact-form"><div class="form-row"><div><label for="contact-name">Nome</label><input id="contact-name" name="name" autocomplete="name" required></div><div><label for="contact-email">E-mail</label><input id="contact-email" type="email" name="email" autocomplete="email" required></div></div><div><label for="contact-subject">Assunto</label><input id="contact-subject" name="subject" required></div><div><label for="contact-message">Mensagem</label><textarea id="contact-message" name="message" required></textarea></div><button class="btn btn--primary" type="submit">Enviar mensagem</button></form></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="admin" aria-labelledby="admin-titulo">
+      <div class="container">
+        <span class="eyebrow">Área da organização</span>
+        <h2 id="admin-titulo">Gestão de atividades e inscrições</h2>
+        <p class="lead">Área demonstrativa para acompanhar inscrições e cadastrar novas atividades.</p>
+        <div id="admin-login" class="card"><div class="card-body"><h3>Acesso administrativo</h3><p class="form-note">Para a demonstração, use a senha <strong>conecta2026</strong>. Em produção, ela deve ser substituída por autenticação segura.</p><form id="admin-form"><div><label for="admin-password">Senha</label><input id="admin-password" type="password" required></div><button class="btn btn--dark" type="submit">Entrar na área administrativa</button></form></div></div>
+        <div class="admin-panel" id="admin-panel">
+          <div class="admin-summary"><div><strong id="registration-total">0</strong>inscrições recebidas</div><div><strong id="activity-total">0</strong>atividades cadastradas</div><div><strong id="contact-total">0</strong>mensagens enviadas</div></div>
+          <div class="admin-controls"><button class="btn btn--primary" type="button" id="add-activity">+ Cadastrar atividade</button><button class="btn btn--outline" type="button" id="admin-logout">Sair</button></div>
+          <h3>Inscrições recebidas</h3><div class="table-wrap"><table><thead><tr><th>Nome</th><th>Atividade</th><th>Contato</th></tr></thead><tbody id="registration-table"></tbody></table></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p><strong>Conecta Ação</strong> — Portal demonstrativo para projeto de extensão PIESC.</p><a class="admin-link" href="#admin">Área administrativa</a></div></footer>
+
+  <dialog id="register-dialog" aria-labelledby="register-title"><div class="modal-head"><div><h2 id="register-title">Quero participar</h2><span id="register-activity-name">Escolha uma atividade</span></div><button class="modal-close" type="button" aria-label="Fechar" data-close-dialog>×</button></div><div class="modal-body"><div class="notice" id="registration-notice" role="status"></div><form id="registration-form"><input id="registration-activity" name="activity" type="hidden"><div><label for="registration-name">Nome completo</label><input id="registration-name" name="name" autocomplete="name" required></div><div class="form-row"><div><label for="registration-phone">Telefone / WhatsApp</label><input id="registration-phone" name="phone" autocomplete="tel" inputmode="tel" required></div><div><label for="registration-email">E-mail</label><input id="registration-email" name="email" type="email" autocomplete="email" required></div></div><p class="form-note">Seus dados serão usados somente para contato sobre esta atividade.</p><div class="modal-actions"><button class="btn btn--outline" type="button" data-close-dialog>Cancelar</button><button class="btn btn--primary" type="submit">Confirmar inscrição</button></div></form></div></dialog>
+
+  <dialog id="activity-dialog" aria-labelledby="activity-dialog-title"><div class="modal-head"><div><h2 id="activity-dialog-title">Cadastrar atividade</h2><span>Preencha os dados para publicar na lista.</span></div><button class="modal-close" type="button" aria-label="Fechar" data-close-dialog>×</button></div><div class="modal-body"><form id="activity-form"><div class="form-row"><div><label for="new-title">Título</label><input id="new-title" required></div><div><label for="new-type">Tipo</label><select id="new-type" required><option value="Curso">Curso</option><option value="Oficina">Oficina</option><option value="Evento">Evento</option><option value="Voluntariado">Voluntariado</option><option value="Projeto">Projeto</option></select></div></div><div><label for="new-description">Descrição</label><textarea id="new-description" required></textarea></div><div class="form-row"><div><label for="new-date">Data</label><input id="new-date" type="date" required></div><div><label for="new-time">Horário</label><input id="new-time" placeholder="Ex.: 14h às 16h" required></div></div><div class="form-row"><div><label for="new-place">Local</label><input id="new-place" required></div><div><label for="new-audience">Público</label><select id="new-audience" required><option>Crianças</option><option>Jovens</option><option>Adultos</option><option>Famílias</option><option>Comunidade</option></select></div></div><div class="modal-actions"><button class="btn btn--outline" type="button" data-close-dialog>Cancelar</button><button class="btn btn--primary" type="submit">Publicar atividade</button></div></form></div></dialog>
+
+  <script>
+    const defaultActivities = [
+      { id: 1, icon: '💻', title: 'Oficina de Inclusão Digital', type: 'Oficina', description: 'Aprenda a usar e-mail, aplicativos públicos e recursos do celular com mais segurança.', date: '20 de setembro', month: 'setembro', time: '14h às 16h', place: 'Centro Comunitário', audience: 'Adultos', spots: '20 vagas' },
+      { id: 2, icon: '🎨', title: 'Arte e Expressão', type: 'Oficina', description: 'Um espaço criativo para crianças explorarem desenho, pintura e novas formas de expressão.', date: '27 de setembro', month: 'setembro', time: '9h às 11h', place: 'Sala Multiuso', audience: 'Crianças', spots: '15 vagas' },
+      { id: 3, icon: '📚', title: 'Curso de Currículo e Empregabilidade', type: 'Curso', description: 'Prepare seu currículo e desenvolva confiança para procurar novas oportunidades de trabalho.', date: '05 de outubro', month: 'outubro', time: '19h às 21h', place: 'Laboratório de Informática', audience: 'Jovens', spots: '25 vagas' },
+      { id: 4, icon: '🤝', title: 'Mutirão Solidário', type: 'Voluntariado', description: 'Participe da organização de doações e da preparação de kits para famílias da região.', date: '12 de outubro', month: 'outubro', time: '8h às 12h', place: 'Sede da Organização', audience: 'Comunidade', spots: '30 vagas' },
+      { id: 5, icon: '🎬', title: 'Cinema na Praça', type: 'Evento', description: 'Sessão gratuita de cinema ao ar livre com atividades para toda a família.', date: '26 de outubro', month: 'outubro', time: '18h às 21h', place: 'Praça Central', audience: 'Famílias', spots: 'Evento aberto' },
+      { id: 6, icon: '🌱', title: 'Horta Comunitária', type: 'Projeto', description: 'Cultive alimentos, troque saberes e ajude a cuidar de um espaço verde coletivo.', date: '09 de novembro', month: 'novembro', time: '8h às 10h', place: 'Horta do Bairro', audience: 'Comunidade', spots: '18 vagas' }
+    ];
+    const icons = { Curso: '📚', Oficina: '🛠️', Evento: '🎉', Voluntariado: '🤝', Projeto: '🌱' };
+    const storage = {
+      get(key, fallback) { try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; } },
+      set(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+    };
+    let activities = storage.get('conecta-acao-activities', defaultActivities);
+    let registrations = storage.get('conecta-acao-registrations', []);
+    let contacts = storage.get('conecta-acao-contacts', []);
+    const $ = (selector) => document.querySelector(selector);
+    const escapeHTML = (value) => String(value).replace(/[&<>'"]/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[char]);
+
+    function renderActivities() {
+      const type = $('#filter-type').value;
+      const date = $('#filter-date').value;
+      const audience = $('#filter-audience').value;
+      const filtered = activities.filter(item => (!type || item.type === type) && (!date || item.month === date) && (!audience || item.audience === audience));
+      $('#activity-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'atividade encontrada' : 'atividades encontradas'}`;
+      $('#activity-list').innerHTML = filtered.length ? filtered.map(activity => `
+        <article class="card activity-card">
+          <div class="activity-image" aria-hidden="true">${activity.icon || icons[activity.type] || '✦'}</div>
+          <div class="card-body"><span class="tag">${escapeHTML(activity.type)}</span><h3>${escapeHTML(activity.title)}</h3><p>${escapeHTML(activity.description)}</p>
+            <div class="activity-details"><span>▣ <b>Data:</b> ${escapeHTML(activity.date)}</span><span>◷ <b>Horário:</b> ${escapeHTML(activity.time)}</span><span>⌖ <b>Local:</b> ${escapeHTML(activity.place)}</span><span>◎ <b>Público:</b> ${escapeHTML(activity.audience)}</span><span>◉ ${escapeHTML(activity.spots)}</span></div>
+            <div class="activity-actions"><button class="btn btn--primary btn--small" type="button" data-register="${activity.id}">Quero Participar</button><a class="btn btn--outline btn--small" target="_blank" rel="noopener" href="https://maps.google.com/?q=${encodeURIComponent(activity.place)}">Ver local</a></div>
+          </div>
+        </article>`).join('') : '<p class="empty">Nenhuma atividade corresponde aos filtros escolhidos. Tente outra combinação.</p>';
+      document.querySelectorAll('[data-register]').forEach(button => button.addEventListener('click', () => openRegistration(Number(button.dataset.register))));
+    }
+    function renderFeatured() {
+      $('#featured-activities').innerHTML = activities.slice(0, 3).map(activity => `
+        <article class="card"><div class="activity-image" aria-hidden="true">${activity.icon || icons[activity.type] || '✦'}</div><div class="card-body"><span class="tag">${escapeHTML(activity.type)}</span><h3>${escapeHTML(activity.title)}</h3><p>${escapeHTML(activity.description)}</p><div class="card-footer"><span class="meta">${escapeHTML(activity.date)}</span><button class="btn btn--primary btn--small" type="button" data-feature-register="${activity.id}">Participar</button></div></div></article>`).join('');
+      document.querySelectorAll('[data-feature-register]').forEach(button => button.addEventListener('click', () => openRegistration(Number(button.dataset.featureRegister))));
+    }
+    function openRegistration(id) {
+      const activity = activities.find(item => item.id === id);
+      if (!activity) { $('#register-activity').value = ''; $('#register-activity-name').textContent = 'Escolha uma atividade na lista abaixo.'; }
+      else { $('#register-activity').value = activity.title; $('#register-activity-name').textContent = activity.title; }
+      $('#registration-notice').classList.remove('is-visible');
+      $('#registration-form').reset();
+      if (activity) $('#register-activity').value = activity.title;
+      $('#register-dialog').showModal();
+    }
+    function monthFromDate(value) { const months = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro']; return months[new Date(`${value}T12:00:00`).getMonth()]; }
+    function formatDate(value) { return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long' }).format(new Date(`${value}T12:00:00`)); }
+    function renderAdmin() {
+      $('#registration-total').textContent = registrations.length;
+      $('#activity-total').textContent = activities.length;
+      $('#contact-total').textContent = contacts.length;
+      $('#registration-table').innerHTML = registrations.length ? registrations.map(item => `<tr><td>${escapeHTML(item.name)}</td><td>${escapeHTML(item.activity)}</td><td>${escapeHTML(item.phone)}<br>${escapeHTML(item.email)}</td></tr>`).join('') : '<tr><td colspan="3">Ainda não há inscrições. Faça um teste pela página Atividades.</td></tr>';
+    }
+    function showNotice(id, text) { const notice = $(id); notice.textContent = text; notice.classList.add('is-visible'); }
+
+    $('.menu-toggle').addEventListener('click', event => { const links = $('#nav-links'); const open = links.classList.toggle('is-open'); event.currentTarget.setAttribute('aria-expanded', open); });
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { $('#nav-links').classList.remove('is-open'); $('.menu-toggle').setAttribute('aria-expanded', 'false'); }));
+    ['#filter-type', '#filter-date', '#filter-audience'].forEach(id => $(id).addEventListener('change', renderActivities));
+    $('[data-open-register]').addEventListener('click', () => openRegistration());
+    document.querySelectorAll('[data-close-dialog]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
+    $('#registration-form').addEventListener('submit', event => { event.preventDefault(); const data = Object.fromEntries(new FormData(event.currentTarget)); if (!data.activity) { showNotice('#registration-notice', 'Escolha uma atividade na lista antes de fazer sua inscrição.'); return; } registrations.push({ ...data, createdAt: new Date().toISOString() }); storage.set('conecta-acao-registrations', registrations); showNotice('#registration-notice', 'Inscrição realizada com sucesso! Em breve entraremos em contato.'); event.currentTarget.reset(); renderAdmin(); });
+    $('#contact-form').addEventListener('submit', event => { event.preventDefault(); contacts.push({ ...Object.fromEntries(new FormData(event.currentTarget)), createdAt: new Date().toISOString() }); storage.set('conecta-acao-contacts', contacts); showNotice('#contact-notice', 'Mensagem enviada com sucesso! A organização retornará assim que possível.'); event.currentTarget.reset(); renderAdmin(); });
+    $('#admin-form').addEventListener('submit', event => { event.preventDefault(); if ($('#admin-password').value === 'conecta2026') { $('#admin-login').style.display = 'none'; $('#admin-panel').classList.add('is-visible'); renderAdmin(); } else { alert('Senha incorreta. Para esta demonstração, use conecta2026.'); } });
+    $('#admin-logout').addEventListener('click', () => { $('#admin-panel').classList.remove('is-visible'); $('#admin-login').style.display = 'block'; $('#admin-form').reset(); });
+    $('#add-activity').addEventListener('click', () => $('#activity-dialog').showModal());
+    $('#activity-form').addEventListener('submit', event => { event.preventDefault(); const rawDate = $('#new-date').value; const activity = { id: Date.now(), icon: icons[$('#new-type').value], title: $('#new-title').value, type: $('#new-type').value, description: $('#new-description').value, date: formatDate(rawDate), month: monthFromDate(rawDate), time: $('#new-time').value, place: $('#new-place').value, audience: $('#new-audience').value, spots: 'Vagas a confirmar' }; activities.push(activity); storage.set('conecta-acao-activities', activities); event.currentTarget.reset(); $('#activity-dialog').close(); renderActivities(); renderFeatured(); renderAdmin(); });
+    renderActivities(); renderFeatured(); renderAdmin();
+  </script>
+</body>
+</html>
