@@ -1,50 +1,24 @@
-# conecta-a-o
-# Conecta Ação
+# Conecta Ação — versão modular
 
-Portal web responsivo criado para divulgar projetos, cursos, oficinas e eventos de uma organização social.
+## Estrutura
 
-## Objetivo
+```text
+index.html       # estrutura e telas
+style.css        # aparência responsiva
+js/data.js       # dados iniciais e listas fixas
+js/storage.js    # armazenamento temporário em localStorage
+js/qr.js         # criação de links e QR Codes temporários
+js/app.js        # funcionamento do portal e administração
+```
 
-Facilitar o acesso da comunidade às ações sociais, centralizando informações, inscrições e canais de contato em uma única plataforma digital.
+## Administração local
 
-## Problema identificado
+1. Acesse a seção **Administração** no fim da página.
+2. Entre com `organizacao@conectaacao.org` e `conecta2026`.
+3. Use as abas para editar dados da instituição, cadastrar atividades, consultar inscrições e gerar QR Codes.
 
-Muitas pessoas não encontram facilmente informações sobre cursos, eventos e oportunidades oferecidas pela organização. Frequentemente, dependem de mensagens pelo WhatsApp e precisam esperar uma resposta.
+## Importante
 
-## Solução
+Esta versão é um frontend funcional. Os dados são salvos apenas no navegador em `localStorage`; portanto, não são compartilhados entre computadores e a senha não é segura para uso real.
 
-O Conecta Ação permite que a pessoa:
-
-1. Acesse o portal por um QR Code ou link.
-2. Conheça a organização e suas ações.
-3. Filtre atividades por tipo, data e público.
-4. Visualize informações sobre cursos, oficinas, projetos e eventos.
-5. Faça uma inscrição simples.
-6. Entre em contato por WhatsApp, Instagram, Facebook ou formulário.
-
-## Funcionalidades
-
-- Página inicial com atividades em destaque.
-- Seção “Quem Somos”.
-- Filtros de atividades por tipo, período e público.
-- Formulário de inscrição.
-- Página “Como Ajudar”: doações, voluntariado e empresas parceiras.
-- Canais integrados de contato.
-- Localização por Google Maps.
-- Área administrativa demonstrativa.
-- Design acessível e responsivo.
-
-## Tecnologias utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- GitHub Pages
-
-## Link do portal
-
-https://nayron55.github.io/conecta-a-o/
-
-## Projeto acadêmico
-
-Projeto desenvolvido para o PIESC — Programa de Integração Escola-Comunidade, com foco em inclusão digital e participação comunitária.
+O próximo passo é substituir `storage.js` por chamadas para uma API e banco de dados (por exemplo, Supabase). No backend real, autenticação, permissões, inscrições e QR Codes temporários precisam ser validados no servidor.
