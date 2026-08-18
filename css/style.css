@@ -272,7 +272,7 @@ p {
   gap: 1rem;
 }
 
-.brand {
+.brand{
   display: flex;
 
   align-items: center;
@@ -287,6 +287,13 @@ p {
   text-decoration: none;
 
   white-space: nowrap;
+}
+.brand img {
+  display: block;
+  width: 230px;
+  height: auto;
+  max-height: 78px;
+  object-fit: contain;
 }
 
 .brand-mark {
