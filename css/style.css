@@ -1892,3 +1892,6 @@ footer a:hover {
     border-color: #999;
   }
 }
+body {
+  outline: 8px solid red !important;
+}
