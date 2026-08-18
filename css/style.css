@@ -2869,3 +2869,71 @@ button,
     break-inside: avoid;
   }
 }
+/* =========================================================
+   CORRECCIÓN DEL FORMULARIO DE CONTACTO
+   ========================================================= */
+
+.two-columns .form-card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Nombre */
+.two-columns .form-card form label:nth-child(1) {
+  grid-column: 1;
+}
+
+/* E-mail */
+.two-columns .form-card form label:nth-child(2) {
+  grid-column: 2;
+}
+
+/* Assunto */
+.two-columns .form-card form label:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+/* Mensagem */
+.two-columns .form-card form label:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+/* Botón */
+.two-columns .form-card form button {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+
+/* Los campos ocupan todo el ancho de su etiqueta */
+.two-columns .form-card form label input,
+.two-columns .form-card form label select,
+.two-columns .form-card form label textarea {
+  width: 100%;
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .two-columns .form-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .two-columns .form-card form label:nth-child(1),
+  .two-columns .form-card form label:nth-child(2),
+  .two-columns .form-card form label:nth-child(3),
+  .two-columns .form-card form label:nth-child(4),
+  .two-columns .form-card form button {
+    grid-column: 1;
+  }
+
+  .two-columns .form-card form button {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
