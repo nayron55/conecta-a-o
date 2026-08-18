@@ -2120,3 +2120,752 @@ textarea:disabled {
     animation-iteration-count: 1 !important;
   }
 }
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+.button,
+.menu a,
+.text-link,
+.icon-button {
+  user-select: none;
+}
+
+
+/* =========================================================
+   45. EFECTO DE PROFUNDIDAD PARA EL HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  right: -100px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 184, 217, 0.18),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -160px;
+  left: -100px;
+
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 126, 104, 0.16),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.hero > .container {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   46. HERO — ELEMENTOS VISUALES
+   ========================================================= */
+
+.hero-grid > * {
+  min-width: 0;
+}
+
+.hero .button-primary {
+  box-shadow:
+    0 8px 24px rgba(8, 126, 104, 0.22);
+}
+
+.hero .button-secondary {
+  box-shadow:
+    0 8px 24px rgba(255, 209, 102, 0.16);
+}
+
+
+/* =========================================================
+   47. ANIMACIÓN SUAVE DE TARJETAS
+   ========================================================= */
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.activity-card:hover .activity-icon {
+  animation: cardFloat 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   48. INDICADOR TECNOLÓGICO
+   ========================================================= */
+
+.tech-indicator {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+}
+
+.tech-indicator::before {
+  content: "";
+
+  width: 0.45rem;
+  height: 0.45rem;
+
+  border-radius: 50%;
+
+  background: var(--color-tech);
+
+  box-shadow:
+    0 0 0 4px rgba(0, 184, 217, 0.10),
+    0 0 12px rgba(0, 184, 217, 0.30);
+}
+
+
+/* =========================================================
+   49. MENU MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    position: sticky;
+
+    top: 0;
+  }
+
+  .nav {
+    min-height: 4.35rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .brand-mark {
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 0.55rem;
+  }
+
+  .menu-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 2.8rem;
+    min-height: 2.6rem;
+
+    border: 1px solid var(--line);
+
+    border-radius: var(--radius-sm);
+
+    background:
+      rgba(255, 255, 255, 0.95);
+
+    color: var(--color-primary);
+
+    font: inherit;
+    font-weight: 850;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .menu-button:hover {
+    transform: translateY(-1px);
+
+    border-color: rgba(0, 184, 217, 0.3);
+
+    background: var(--color-white);
+  }
+
+  .menu {
+    display: none;
+
+    position: absolute;
+
+    top: 4.35rem;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0.35rem;
+
+    padding: 0.9rem 1.25rem 1.1rem;
+
+    border-top: 1px solid var(--line-light);
+
+    background:
+      rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+      0 15px 30px rgba(4, 41, 54, 0.12);
+
+    backdrop-filter: blur(14px);
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu a {
+    display: block;
+
+    padding: 0.75rem 0.8rem;
+
+    border-radius: var(--radius-sm);
+  }
+
+  .menu a:hover {
+    background:
+      rgba(0, 184, 217, 0.055);
+
+    text-decoration: none;
+  }
+
+  .menu-admin {
+    border-color: var(--color-primary) !important;
+
+    text-align: center;
+  }
+
+  .hero-grid,
+  .two-columns,
+  .admin-split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding:
+      clamp(4rem, 10vw, 6rem)
+      0;
+  }
+
+  .activity-grid,
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters,
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-toolbar {
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================================================
+   50. TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: min(
+      100% - 2rem,
+      1120px
+    );
+  }
+
+  .section {
+    padding:
+      4.2rem 0;
+  }
+
+  h1 {
+    font-size:
+      clamp(
+        2.35rem,
+        8vw,
+        3.6rem
+      );
+  }
+
+  h2 {
+    font-size:
+      clamp(
+        1.8rem,
+        6vw,
+        2.6rem
+      );
+  }
+
+  .activity-grid,
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-toolbar .button {
+    width: 100%;
+  }
+
+  .admin-tabs {
+    overflow-x: auto;
+
+    flex-wrap: nowrap;
+
+    padding-bottom: 0.3rem;
+  }
+
+  .admin-tabs button {
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+  }
+}
+
+
+/* =========================================================
+   51. CELULAR
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .container {
+    width:
+      min(
+        calc(100% - 1.35rem),
+        1120px
+      );
+  }
+
+  .section {
+    padding:
+      3.5rem 0;
+  }
+
+  .hero {
+    padding:
+      3.8rem 0 4.2rem;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  .button-row {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .button-row .button {
+    width: 100%;
+  }
+
+  .activity-grid,
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card,
+  .card,
+  .form-card {
+    padding: 1.05rem;
+  }
+
+  .activity-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .admin-item {
+    flex-direction: column;
+  }
+
+  .item-actions {
+    width: 100%;
+  }
+
+  .item-actions .icon-button {
+    flex: 1;
+  }
+
+  .qr-card {
+    min-height: 210px;
+
+    padding: 1rem;
+  }
+
+  .qr-card img {
+    width: min(100%, 230px);
+  }
+
+  dialog {
+    width:
+      calc(100% - 1rem);
+
+    max-height:
+      calc(100vh - 1rem);
+
+    border-radius:
+      var(--radius-md);
+  }
+
+  dialog form {
+    padding: 1rem;
+  }
+
+  .dialog-header {
+    padding:
+      0.85rem 1rem;
+  }
+
+  .dialog-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .toast {
+    right: 0.7rem;
+    bottom: 0.7rem;
+
+    max-width:
+      calc(100% - 1.4rem);
+  }
+
+  footer {
+    padding:
+      2rem 0;
+  }
+}
+
+
+/* =========================================================
+   52. PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .container {
+    width:
+      calc(100% - 1rem);
+  }
+
+  .brand {
+    font-size: 0.98rem;
+  }
+
+  .hero {
+    padding-top: 3.2rem;
+  }
+
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .activity-card,
+  .card,
+  .form-card {
+    padding: 0.9rem;
+  }
+
+  .button {
+    min-height: 2.8rem;
+
+    padding:
+      0.62rem 0.8rem;
+  }
+}
+
+
+/* =========================================================
+   53. QR — ESTADOS FUTUROS
+   ========================================================= */
+
+.qr-active {
+  position: relative;
+}
+
+.qr-active::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0.75rem;
+  right: 0.75rem;
+
+  width: 0.55rem;
+  height: 0.55rem;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-success);
+
+  box-shadow:
+    0 0 0 4px rgba(16, 185, 129, 0.10),
+    0 0 14px rgba(16, 185, 129, 0.30);
+}
+
+.qr-expired {
+  opacity: 0.58;
+
+  filter: grayscale(0.45);
+}
+
+.qr-temporary {
+  border-style: dashed;
+}
+
+.qr-temporary::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0.75rem;
+  right: 0.75rem;
+
+  width: 0.55rem;
+  height: 0.55rem;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-event);
+
+  box-shadow:
+    0 0 0 4px rgba(249, 115, 22, 0.10);
+}
+
+
+/* =========================================================
+   54. QR — HALO TECNOLÓGICO
+   ========================================================= */
+
+.qr-card img {
+  transition:
+    transform var(--transition-normal),
+    filter var(--transition-normal);
+}
+
+.qr-card:hover img {
+  transform: scale(1.025);
+
+  filter:
+    drop-shadow(
+      0 8px 16px
+      rgba(0, 184, 217, 0.10)
+    );
+}
+
+
+/* =========================================================
+   55. ESTADOS DE CARGA
+   ========================================================= */
+
+.loading {
+  position: relative;
+
+  color: transparent !important;
+
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 1.1rem;
+  height: 1.1rem;
+
+  margin:
+    -0.55rem 0 0 -0.55rem;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color:
+    var(--color-white);
+
+  border-radius: 50%;
+
+  animation:
+    spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   56. FOCUS
+   ========================================================= */
+
+:focus-visible {
+  outline:
+    3px solid var(--color-yellow);
+
+  outline-offset:
+    3px;
+}
+
+
+/* =========================================================
+   57. SELECCIÓN DE TEXTO
+   ========================================================= */
+
+::selection {
+  background:
+    rgba(0, 184, 217, 0.22);
+
+  color:
+    var(--color-primary-dark);
+}
+
+
+/* =========================================================
+   58. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    #edf5f4;
+}
+
+::-webkit-scrollbar-thumb {
+  border:
+    2px solid #edf5f4;
+
+  border-radius:
+    999px;
+
+  background:
+    #8bb4b5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    var(--color-primary);
+}
+
+
+/* =========================================================
+   59. IMPRESIÓN
+   ========================================================= */
+
+@media print {
+
+  .site-header,
+  .menu-button,
+  .button,
+  .admin-section,
+  .toast {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+
+    color: black;
+  }
+
+  .section {
+    padding: 1.5rem 0;
+  }
+
+  .activity-card,
+  .card,
+  .form-card,
+  .qr-card {
+    box-shadow: none;
+
+    break-inside: avoid;
+  }
+}
