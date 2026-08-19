@@ -8,7 +8,7 @@
   <title>Conecta Ação | Comunidade em movimento</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="giro-interface">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="site-header">
     <nav class="container nav" aria-label="Navegação principal">
@@ -41,11 +41,52 @@
       </div>
     </section>
 
-    <section class="section" id="quem-somos">
-      <div class="container two-columns">
-        <div><p class="eyebrow">Quem somos</p><h2 data-org-name>Conecta Ação</h2><p class="lead" data-org-about></p></div>
-        <div class="highlight-list"><article><h3>Missão</h3><p data-org-mission></p></article><article><h3>Valores</h3><p>Respeito, inclusão, colaboração, transparência e compromisso social.</p></article><article><h3>Impacto</h3><p>Informação acessível para aproximar a comunidade das oportunidades.</p></article></div>
+    <section class="hero giro-hero" id="inicio">
+
+  <div class="giro-orb giro-orb-cyan"></div>
+  <div class="giro-orb giro-orb-purple"></div>
+  <div class="giro-orb giro-orb-green"></div>
+
+  <div class="giro-wave giro-wave-one"></div>
+  <div class="giro-wave giro-wave-two"></div>
+
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">Comunidade em movimento</p>
+
+      <h1 data-org-headline>
+        Conectando
+        <span class="giro-word-cyan">pessoas</span>
+        a ações que
+        <span class="giro-word-purple">transformam</span>
+        a comunidade.
+      </h1>
+
+      <p class="lead" data-org-summary>
+        Encontre cursos, oficinas, projetos e eventos em um só lugar.
+      </p>
+
+      <div class="button-row">
+
+        <a class="button button-primary" href="#atividades">
+          <span class="button-icon">✦</span>
+          Ver atividades
+        </a>
+
+        <button
+          class="button button-secondary"
+          type="button"
+          data-action="open-general-registration"
+        >
+          <span class="button-icon">♥</span>
+          Quero participar
+        </button>
+
       </div>
+
+    </div>
     </section>
 
     <section class="section section-white" id="atividades">
@@ -61,7 +102,32 @@
       </div>
     </section>
 
-    <section class="section" id="como-ajudar"><div class="container"><p class="eyebrow">Faça parte</p><h2>Existem muitas formas de ajudar</h2><div class="support-grid"><article><span>♥</span><h3>Doações</h3><p>Ajude a ampliar as atividades e os materiais oferecidos.</p><a href="#contato" class="text-link">Quero doar</a></article><article><span>✦</span><h3>Voluntariado</h3><p>Compartilhe tempo e conhecimento em uma ação da comunidade.</p><button class="text-link" type="button" data-action="filter-volunteer">Ser voluntário</button></article><article><span>↔</span><h3>Empresas parceiras</h3><p>Construa uma parceria de impacto positivo no território.</p><a href="#contato" class="text-link">Ser parceiro</a></article></div></div></section>
+    <section class="section" id="como-ajudar"><div class="container"><p class="eyebrow">Faça parte</p><h2>Existem muitas formas de ajudar</h2><div class="support-grid">
+
+  <article>
+    <span class="support-icon support-icon-donation" aria-hidden="true">♥</span>
+    <h3>Doações</h3>
+    <p>Ajude a ampliar as atividades e os materiais oferecidos.</p>
+    <a href="#contato" class="text-link">Quero doar</a>
+  </article>
+
+  <article>
+    <span class="support-icon support-icon-volunteer" aria-hidden="true">✦</span>
+    <h3>Voluntariado</h3>
+    <p>Compartilhe tempo e conhecimento em uma ação da comunidade.</p>
+    <button class="text-link" type="button" data-action="filter-volunteer">
+      Ser voluntário
+    </button>
+  </article>
+
+  <article>
+    <span class="support-icon support-icon-partner" aria-hidden="true">↔</span>
+    <h3>Empresas parceiras</h3>
+    <p>Construa uma parceria de impacto positivo no território.</p>
+    <a href="#contato" class="text-link">Ser parceiro</a>
+  </article>
+
+</div></div></section>
 
     <section class="section section-white" id="contato"><div class="container two-columns"><div><p class="eyebrow">Contato</p><h2>Fale com a gente</h2><p class="lead">Escolha o canal mais confortável para você.</p><div class="contact-list"><a id="contact-whatsapp" target="_blank" rel="noopener">WhatsApp <small id="display-whatsapp"></small></a><a id="contact-instagram" target="_blank" rel="noopener">Instagram <small id="display-instagram"></small></a><a id="contact-facebook" target="_blank" rel="noopener">Facebook <small id="display-facebook"></small></a><a id="contact-map" target="_blank" rel="noopener">Como chegar <small id="display-address"></small></a></div></div><form class="form-card" id="contact-form"><h3>Envie uma mensagem</h3><label>Nome<input name="name" autocomplete="name" required></label><label>E-mail<input name="email" type="email" autocomplete="email" required></label><label>Assunto<input name="subject" required></label><label>Mensagem<textarea name="message" required></textarea></label><button class="button button-primary" type="submit">Enviar mensagem</button></form></div></section>
 
@@ -83,5 +149,6 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <footer><div class="container"><strong data-org-name>Conecta Ação</strong> · Projeto acadêmico PIESC — Inclusão digital e participação comunitária.</div></footer>
   <script type="module" src="js/app.js"></script>
+  <script src="js/giro-interface.js"></script>
 </body>
 </html>

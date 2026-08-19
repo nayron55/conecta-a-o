@@ -6,58 +6,27 @@
    ========================================================= */
 
 :root {
+
   /* Colores principales */
+
   --color-primary: #073b4c;
   --color-primary-dark: #042936;
+  --color-primary-deep: #02030a;
   --color-primary-light: #0b6078;
 
   /* Tecnología */
+
   --color-tech: #00b8d9;
   --color-tech-light: #67e8f9;
   --color-tech-dark: #087e9b;
 
   /* Comunidad */
+
   --color-success: #087e68;
   --color-success-light: #10b981;
   --color-success-dark: #056653;
 
-  /* Categorías QR */
-  --color-participation: #22c55e;
-  --color-info: #2196f3;
-  --color-event: #f97316;
-  --color-opportunity: #8b5cf6;
-  --color-campaign: #ef4444;
-  --color-donation: #eab308;
-
-  /* Colores generales */
-  --color-background: #f4f8f7;
-  --color-surface: #ffffff;
-  --color-surface-soft: #eef7f6;
-  --color-text: #17333d;
-  --color-muted: #567078;
-  --color-white: #ffffff;
-  --color-black: #07181f;
-  --color-danger: #a33131;
-
-  /* Elementos */
-  --line: #c8d9d6;
-  --line-light: #e0ecea;
-  --color-yellow: #ffd166;
-
-  /* Sombras */
-  --shadow-sm: 0 4px 14px rgba(4, 41, 54, 0.07);
-  --shadow-md: 0 10px 30px rgba(4, 41, 54, 0.10);
-  --shadow-lg: 0 20px 55px rgba(4, 41, 54, 0.14);
-
-  /* Bordes */
-  --radius-sm: 0.45rem;
-  --radius-md: 0.7rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.4rem;
-
-  /* Animaciones */
-  --transition-fast: 160ms ease;
-  --transition-normal: 240ms ease;
+  /* ...resto de tu código... */
 }
 
 
@@ -537,9 +506,10 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 0.72rem 1.15rem;
 
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.30);
   border-radius: 1rem;
 
   cursor: pointer;
@@ -552,7 +522,7 @@ p {
 
   box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 
   transition:
     transform var(--transition-fast),
@@ -567,7 +537,7 @@ p {
 
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
 }
 
 .button:active {
@@ -584,6 +554,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+
 /* =========================================================
    10. VARIACIONES DE BOTONES
    ========================================================= */
@@ -591,37 +562,37 @@ button:focus-visible {
 .button-primary {
   background: linear-gradient(
     135deg,
-    rgba(8, 126, 104, 0.82),
-    rgba(0, 184, 217, 0.68)
+    rgba(8, 126, 104, 0.78),
+    rgba(0, 184, 217, 0.62)
   );
 
   color: var(--color-white);
 
-  border-color: rgba(255, 255, 255, 0.30);
+  border-color: rgba(255, 255, 255, 0.32);
 
   box-shadow:
     0 8px 25px rgba(0, 184, 217, 0.20),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.30);
 }
 
 .button-primary:hover {
   background: linear-gradient(
     135deg,
-    rgba(8, 126, 104, 0.92),
-    rgba(0, 184, 217, 0.78)
+    rgba(8, 126, 104, 0.88),
+    rgba(0, 184, 217, 0.74)
   );
 
   box-shadow:
     0 12px 30px rgba(0, 184, 217, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    inset 0 1px 0 rgba(255, 255, 255, 0.40);
 }
 
 .button-secondary {
-  background: rgba(255, 209, 102, 0.78);
+  background: rgba(255, 209, 102, 0.72);
 
   color: var(--color-primary-dark);
 
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.48);
 
   box-shadow:
     0 8px 25px rgba(255, 209, 102, 0.18),
@@ -629,139 +600,54 @@ button:focus-visible {
 }
 
 .button-secondary:hover {
-  background: rgba(255, 224, 138, 0.88);
+  background: rgba(255, 224, 138, 0.84);
 
   box-shadow:
     0 12px 30px rgba(255, 209, 102, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
 .button-dark {
-  background: rgba(4, 41, 54, 0.82);
+  background: rgba(4, 41, 54, 0.76);
 
   color: var(--color-white);
 
-  border-color: rgba(103, 232, 249, 0.25);
+  border-color: rgba(103, 232, 249, 0.30);
 
   box-shadow:
     0 8px 25px rgba(4, 41, 54, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .button-dark:hover {
-  background: rgba(7, 59, 76, 0.90);
+  background: rgba(7, 59, 76, 0.88);
 
   box-shadow:
     0 12px 30px rgba(4, 41, 54, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 .button-outline {
-  border-color: rgba(0, 184, 217, 0.55);
-
   background: rgba(255, 255, 255, 0.10);
 
   color: var(--color-primary);
+
+  border-color: rgba(0, 184, 217, 0.50);
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .button-outline:hover {
-  border-color: var(--color-tech);
-
   background: rgba(0, 184, 217, 0.10);
+
+  border-color: var(--color-tech);
 
   color: var(--color-tech-dark);
 
   box-shadow:
     0 8px 25px rgba(0, 184, 217, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-/* =========================================================
-   11. TARJETA DE IMPACTO
-   ========================================================= */
-
-.impact-card {
-  position: relative;
-
-  padding: 1.5rem;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(103, 232, 249, 0.18);
-
-  border-radius: var(--radius-lg);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.11),
-      rgba(255, 255, 255, 0.035)
-    );
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.14);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.impact-card::before {
-  content: "";
-
-  position: absolute;
-
-  top: -70px;
-  right: -70px;
-
-  width: 160px;
-  height: 160px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(103, 232, 249, 0.16),
-      transparent 70%
-    );
-
-  pointer-events: none;
-}
-
-.impact-title {
-  position: relative;
-  z-index: 1;
-
-  margin: 0 0 0.6rem;
-
-  color: var(--color-white);
-
-  font-size: 1.16rem;
-  font-weight: 850;
-}
-
-.impact-item {
-  position: relative;
-  z-index: 1;
-
-  display: flex;
-
-  gap: 1rem;
-
-  padding: 0.78rem 0;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.impact-item strong {
-  display: block;
-
-  min-width: 5.8rem;
-
-  color: var(--color-yellow);
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 /* =========================================================
    CONECTA AÇÃO
@@ -2957,4 +2843,1331 @@ button,
     width: 100%;
     justify-self: stretch;
   }
+}
+/* =========================================================
+   GIRO — NOVA INTERFACE
+   PARTE A
+   Fundo + vidro + navegação + hero
+   ========================================================= */
+
+:root {
+
+  /* FUNDO */
+
+  --giro-black: #02030a;
+  --giro-black-2: #050711;
+  --giro-dark: #07131c;
+  --giro-dark-purple: #0a0718;
+
+  /* CORES DE IDENTIDADE */
+
+  --giro-cyan: #20e4dc;
+  --giro-cyan-light: #69f7ef;
+
+  --giro-green: #18d6a0;
+
+  --giro-purple: #9b6cff;
+  --giro-purple-light: #b99aff;
+
+  --giro-blue: #3d9cff;
+
+  /* VIDRO */
+
+  --giro-glass: rgba(255,255,255,.075);
+  --giro-glass-strong: rgba(255,255,255,.11);
+
+  --giro-border: rgba(255,255,255,.14);
+  --giro-border-light: rgba(255,255,255,.20);
+
+  --giro-blur: 22px;
+  --giro-blur-heavy: 32px;
+
+  /* MOVIMENTO */
+
+  --giro-ease: cubic-bezier(.2,.8,.2,1);
+  --giro-spring: cubic-bezier(.16,1,.3,1);
+}
+
+
+/* =========================================================
+   FUNDO PRINCIPAL
+   ========================================================= */
+
+body.giro-interface {
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 8% 78%,
+      rgba(0, 230, 190, .13),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 90% 42%,
+      rgba(115, 60, 255, .16),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      135deg,
+      var(--giro-black),
+      var(--giro-dark) 52%,
+      var(--giro-dark-purple)
+    );
+
+  color: rgba(255,255,255,.92);
+}
+
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
+body.giro-interface h1,
+body.giro-interface h2,
+body.giro-interface h3 {
+
+  color: #ffffff;
+
+  text-shadow:
+    0 5px 25px rgba(0,0,0,.18);
+}
+
+body.giro-interface p {
+  color: rgba(255,255,255,.76);
+}
+
+body.giro-interface .lead {
+  color: rgba(255,255,255,.72);
+}
+
+body.giro-interface .eyebrow {
+  color: var(--giro-cyan);
+}
+
+
+/* =========================================================
+   HEADER DE VIDRIO
+   ========================================================= */
+
+body.giro-interface .site-header {
+
+  background:
+    rgba(4,6,14,.68);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.11);
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.07);
+
+  backdrop-filter:
+    blur(var(--giro-blur-heavy))
+    saturate(150%);
+
+  -webkit-backdrop-filter:
+    blur(var(--giro-blur-heavy))
+    saturate(150%);
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+body.giro-interface .menu a {
+
+  color:
+    rgba(255,255,255,.82);
+
+  transition:
+    color 220ms var(--giro-ease),
+    transform 220ms var(--giro-ease);
+}
+
+body.giro-interface .menu a:hover {
+
+  color: #ffffff;
+
+  transform:
+    translateY(-1px);
+}
+
+body.giro-interface
+.menu a:not(.menu-admin)::after {
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--giro-cyan),
+      var(--giro-green)
+    );
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+body.giro-interface .brand {
+
+  color: #ffffff;
+}
+
+body.giro-interface .brand img {
+
+  filter:
+    drop-shadow(
+      0 6px 18px
+      rgba(0,220,255,.18)
+    );
+
+  transition:
+    transform 350ms var(--giro-spring),
+    filter 220ms var(--giro-ease);
+}
+
+body.giro-interface .brand:hover img {
+
+  transform:
+    scale(1.025);
+
+  filter:
+    drop-shadow(
+      0 8px 25px
+      rgba(0,230,255,.30)
+    );
+}
+
+
+/* =========================================================
+   ADMINISTRAÇÃO
+   ========================================================= */
+
+body.giro-interface .menu-admin {
+
+  border:
+    1px solid
+    rgba(155,108,255,.38);
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(155,108,255,.19),
+      rgba(80,50,180,.08)
+    );
+
+  color: #ffffff !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 8px 25px rgba(110,70,255,.10);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+body.giro-interface .menu-admin:hover {
+
+  background:
+    rgba(155,108,255,.30);
+
+  border-color:
+    rgba(190,165,255,.60);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body.giro-interface .giro-hero {
+
+  position: relative;
+
+  min-height: 700px;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 82% 28%,
+      rgba(0,220,255,.15),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(0,220,175,.16),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 94% 72%,
+      rgba(125,70,255,.20),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #02030a 0%,
+      #06151d 52%,
+      #08051a 100%
+    );
+}
+
+
+/* =========================================================
+   HERO — LUZES
+   ========================================================= */
+
+.giro-orb {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(2px);
+
+  opacity: .65;
+
+  animation:
+    giroOrbFloat
+    10s
+    ease-in-out
+    infinite alternate;
+}
+
+.giro-orb-cyan {
+
+  width: 380px;
+  height: 380px;
+
+  top: 8%;
+  right: 8%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(30,230,220,.18),
+      transparent 70%
+    );
+}
+
+.giro-orb-purple {
+
+  width: 500px;
+  height: 500px;
+
+  right: -160px;
+  bottom: -220px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(130,75,255,.20),
+      transparent 70%
+    );
+
+  animation-delay: -3s;
+}
+
+.giro-orb-green {
+
+  width: 430px;
+  height: 430px;
+
+  left: -220px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,220,170,.18),
+      transparent 70%
+    );
+
+  animation-delay: -6s;
+}
+
+
+@keyframes giroOrbFloat {
+
+  from {
+    transform:
+      translate3d(0,0,0)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate3d(15px,-12px,0)
+      scale(1.035);
+  }
+}
+
+
+/* =========================================================
+   FORMAS CURVAS
+   ========================================================= */
+
+.giro-wave {
+
+  position: absolute;
+
+  pointer-events: none;
+
+  width: 420px;
+  height: 760px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(100,240,230,.10);
+
+  transform:
+    rotate(28deg);
+
+  opacity: .65;
+
+  filter:
+    blur(.2px);
+}
+
+.giro-wave-one {
+
+  left: -300px;
+  top: -120px;
+
+  box-shadow:
+    0 0 0 35px rgba(0,220,190,.025),
+    0 0 0 70px rgba(0,220,190,.018);
+}
+
+.giro-wave-two {
+
+  left: -380px;
+  top: -60px;
+
+  border-color:
+    rgba(150,90,255,.12);
+
+  transform:
+    rotate(35deg);
+}
+
+
+/* =========================================================
+   HERO TEXTO
+   ========================================================= */
+
+body.giro-interface .hero-content {
+
+  position: relative;
+
+  z-index: 3;
+}
+
+body.giro-interface .hero h1 {
+
+  color: #ffffff;
+
+  font-size:
+    clamp(3rem,5.3vw,5.2rem);
+
+  line-height: 1.02;
+
+  letter-spacing:
+    -.055em;
+}
+
+.giro-word-cyan {
+
+  color:
+    var(--giro-cyan);
+
+  text-shadow:
+    0 0 35px
+    rgba(30,230,220,.18);
+}
+
+.giro-word-purple {
+
+  color:
+    var(--giro-purple);
+
+  text-shadow:
+    0 0 35px
+    rgba(150,100,255,.20);
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+body.giro-interface .button {
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  border-radius:
+    999px;
+
+  backdrop-filter:
+    blur(20px)
+    saturate(150%);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(150%);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.20),
+
+    0 10px 30px
+    rgba(0,0,0,.18);
+
+  transition:
+    transform 300ms var(--giro-spring),
+    background 220ms var(--giro-ease),
+    border-color 220ms var(--giro-ease),
+    box-shadow 220ms var(--giro-ease);
+}
+
+body.giro-interface .button:hover {
+
+  transform:
+    translateY(-2px)
+    scale(1.015);
+}
+
+.button-icon {
+
+  display: inline-flex;
+
+  margin-right:
+    .45rem;
+
+  transition:
+    transform 300ms var(--giro-spring);
+}
+
+.button:hover .button-icon {
+
+  transform:
+    scale(1.08);
+}
+/* =========================================================
+   GIRO — NOVA INTERFACE
+   PARTE B
+   Glass cards + icons + categories
+   ========================================================= */
+
+
+/* =========================================================
+   CARTÃO "O QUE VOCÊ ENCONTRA"
+   ========================================================= */
+
+body.giro-interface .impact-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 1.5rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.17);
+
+  border-radius:
+    1.5rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.115),
+      rgba(255,255,255,.035)
+    );
+
+  box-shadow:
+
+    0 25px 70px
+    rgba(0,0,0,.28),
+
+    inset 0 1px 0
+    rgba(255,255,255,.20);
+
+  backdrop-filter:
+    blur(30px)
+    saturate(150%);
+
+  -webkit-backdrop-filter:
+    blur(30px)
+    saturate(150%);
+}
+
+body.giro-interface .impact-title {
+
+  color:
+    #ffffff;
+}
+
+body.giro-interface .impact-item {
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.10);
+
+  transition:
+    background 220ms var(--giro-ease),
+    transform 300ms var(--giro-spring);
+}
+
+body.giro-interface .impact-item:hover {
+
+  background:
+    rgba(255,255,255,.035);
+
+  transform:
+    translateX(4px);
+}
+
+body.giro-interface
+.impact-item strong {
+
+  color:
+    var(--giro-cyan);
+}
+
+body.giro-interface
+.impact-item span {
+
+  color:
+    rgba(255,255,255,.78);
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+body.giro-interface .section,
+body.giro-interface .section-white {
+
+  background:
+    transparent;
+}
+
+body.giro-interface .section {
+
+  position: relative;
+
+  padding:
+    clamp(4.5rem,8vw,7rem) 0;
+}
+
+
+/* =========================================================
+   QUEM SOMOS
+   ========================================================= */
+
+body.giro-interface .highlight-list article {
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-left:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius:
+    1.2rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.085),
+      rgba(255,255,255,.025)
+    );
+
+  box-shadow:
+    0 18px 45px
+    rgba(0,0,0,.16),
+
+    inset 0 1px 0
+    rgba(255,255,255,.09);
+
+  backdrop-filter:
+    blur(22px);
+
+  -webkit-backdrop-filter:
+    blur(22px);
+
+  transition:
+    transform 300ms var(--giro-spring),
+    border-color 220ms var(--giro-ease),
+    box-shadow 220ms var(--giro-ease);
+}
+
+body.giro-interface
+.highlight-list article:hover {
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(80,230,220,.25);
+
+  box-shadow:
+    0 25px 55px
+    rgba(0,0,0,.22),
+
+    inset 0 1px 0
+    rgba(255,255,255,.14);
+}
+
+body.giro-interface
+.highlight-list article h3 {
+
+  color:
+    #ffffff;
+}
+
+body.giro-interface
+.highlight-list article p {
+
+  color:
+    rgba(255,255,255,.70);
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+body.giro-interface .filters {
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius:
+    1.25rem;
+
+  background:
+    rgba(255,255,255,.055);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.08);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+}
+
+body.giro-interface .filters label {
+
+  color:
+    rgba(255,255,255,.85);
+}
+
+body.giro-interface .filters select {
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+
+  background:
+    rgba(255,255,255,.07);
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================================
+   CARDS DE ATIVIDADES
+   ========================================================= */
+
+body.giro-interface
+.activity-card,
+body.giro-interface
+.card,
+body.giro-interface
+.support-grid article {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius:
+    1.3rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.09),
+      rgba(255,255,255,.025)
+    );
+
+  box-shadow:
+
+    0 18px 50px
+    rgba(0,0,0,.17),
+
+    inset 0 1px 0
+    rgba(255,255,255,.09);
+
+  backdrop-filter:
+    blur(22px)
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(22px)
+    saturate(135%);
+
+  transition:
+    transform 330ms var(--giro-spring),
+    border-color 220ms var(--giro-ease),
+    box-shadow 220ms var(--giro-ease);
+}
+
+body.giro-interface
+.activity-card:hover,
+body.giro-interface
+.card:hover,
+body.giro-interface
+.support-grid article:hover {
+
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(100,230,225,.22);
+
+  box-shadow:
+
+    0 28px 60px
+    rgba(0,0,0,.25),
+
+    inset 0 1px 0
+    rgba(255,255,255,.14);
+}
+
+
+/* =========================================================
+   ÍCONES DE ATIVIDADES
+   ========================================================= */
+
+body.giro-interface
+.activity-icon {
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+
+  border-radius:
+    1rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30,220,210,.20),
+      rgba(20,100,130,.10)
+    );
+
+  color:
+    var(--giro-cyan);
+
+  box-shadow:
+
+    0 10px 25px
+    rgba(0,220,210,.12),
+
+    inset 0 1px 0
+    rgba(255,255,255,.15);
+
+  transition:
+    transform 320ms var(--giro-spring),
+    box-shadow 220ms var(--giro-ease),
+    filter 220ms var(--giro-ease);
+}
+
+
+/*
+   ESTE É O EFEITO QUE VOCÊ PEDIU:
+
+   Cursor sobre o ícone
+   → ícone cresce milimetricamente
+   → brilho aumenta
+   → não altera o significado da cor
+*/
+
+body.giro-interface
+.activity-icon:hover {
+
+  transform:
+    scale(1.055);
+
+  filter:
+    brightness(1.10);
+
+  box-shadow:
+
+    0 12px 32px
+    rgba(0,220,210,.20),
+
+    inset 0 1px 0
+    rgba(255,255,255,.22);
+}
+
+
+/* =========================================================
+   FORMAS DE AJUDAR
+   ========================================================= */
+
+body.giro-interface
+.support-grid span.support-icon {
+
+  width:
+    3.1rem;
+
+  height:
+    3.1rem;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    50%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  background:
+    rgba(255,255,255,.07);
+
+  color:
+    rgba(255,255,255,.90);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.14);
+
+  transition:
+    transform 330ms var(--giro-spring),
+    filter 220ms var(--giro-ease),
+    box-shadow 220ms var(--giro-ease);
+}
+
+
+/* =========================================================
+   CORES SEM MEXER NO RESTO DA INTERFACE
+   ========================================================= */
+
+/*
+   SOMENTE os desenhos específicos recebem cor.
+   O card continua neutro/vidro.
+*/
+
+
+/* DOAÇÃO */
+
+body.giro-interface
+.support-icon-donation {
+
+  color:
+    #ffd84a !important;
+
+  background:
+    rgba(234,179,8,.12) !important;
+
+  border-color:
+    rgba(234,179,8,.25) !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(234,179,8,.12),
+
+    inset 0 1px 0
+    rgba(255,255,255,.14) !important;
+}
+
+
+/* VOLUNTARIADO */
+
+body.giro-interface
+.support-icon-volunteer {
+
+  color:
+    var(--giro-purple) !important;
+
+  background:
+    rgba(155,108,255,.12) !important;
+
+  border-color:
+    rgba(155,108,255,.25) !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(155,108,255,.13),
+
+    inset 0 1px 0
+    rgba(255,255,255,.14) !important;
+}
+
+
+/* EMPRESAS */
+
+body.giro-interface
+.support-icon-partner {
+
+  color:
+    var(--giro-blue) !important;
+
+  background:
+    rgba(61,156,255,.12) !important;
+
+  border-color:
+    rgba(61,156,255,.25) !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(61,156,255,.12),
+
+    inset 0 1px 0
+    rgba(255,255,255,.14) !important;
+}
+
+
+/* =========================================================
+   MICROINTERAÇÃO DOS ÍCONES
+   ========================================================= */
+
+body.giro-interface
+.support-icon:hover {
+
+  transform:
+    scale(1.055);
+
+  filter:
+    brightness(1.10);
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+body.giro-interface .text-link {
+
+  color:
+    rgba(255,255,255,.85);
+
+  transition:
+    color 220ms var(--giro-ease),
+    transform 220ms var(--giro-ease);
+}
+
+body.giro-interface .text-link:hover {
+
+  color:
+    var(--giro-cyan);
+
+  transform:
+    translateX(2px);
+}
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+body.giro-interface .contact-list a {
+
+  border:
+    1px solid
+    rgba(255,255,255,.11);
+
+  border-radius:
+    1rem;
+
+  background:
+    rgba(255,255,255,.055);
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.07);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+body.giro-interface .contact-list small {
+
+  color:
+    rgba(255,255,255,.55);
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+
+body.giro-interface .form-card {
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius:
+    1.3rem;
+
+  background:
+    rgba(255,255,255,.06);
+
+  backdrop-filter:
+    blur(24px);
+
+  -webkit-backdrop-filter:
+    blur(24px);
+}
+
+body.giro-interface .form-card label {
+
+  color:
+    rgba(255,255,255,.82);
+}
+
+body.giro-interface
+.form-card input,
+body.giro-interface
+.form-card textarea,
+body.giro-interface
+.form-card select {
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  background:
+    rgba(0,0,0,.20);
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================================
+   ADMINISTRAÇÃO
+   ========================================================= */
+
+body.giro-interface .admin-section {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5,10,20,.90),
+      rgba(10,6,24,.90)
+    );
+}
+
+body.giro-interface .admin-section .card {
+
+  background:
+    rgba(255,255,255,.055);
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .giro-orb {
+
+    animation: none;
+  }
+
+  body.giro-interface
+  .activity-icon:hover,
+  body.giro-interface
+  .support-icon:hover {
+
+    transform: none;
+  }
+}
+/* =========================================================
+   GIRO — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  body.giro-interface .hero {
+
+    min-height:
+      auto;
+
+    padding:
+      5rem 0 5rem;
+  }
+
+  body.giro-interface .hero h1 {
+
+    font-size:
+      clamp(2.6rem,10vw,4rem);
+  }
+
+  .giro-wave {
+
+    opacity:
+      .35;
+
+    transform:
+      rotate(25deg)
+      scale(.75);
+  }
+
+  .giro-orb-cyan {
+
+    right:
+      -120px;
+
+    top:
+      5%;
+  }
+
+  .giro-orb-purple {
+
+    right:
+      -240px;
+  }
+
+  .giro-orb-green {
+
+    left:
+      -280px;
+  }
+
+  body.giro-interface
+  .impact-card {
+
+    margin-top:
+      2rem;
+
+    border-radius:
+      1.25rem;
+  }
+}
+
+
+@media (max-width: 560px) {
+
+  body.giro-interface .hero {
+
+    padding:
+      4rem 0;
+  }
+
+  body.giro-interface
+  .button-row {
+
+    width:
+      100%;
+  }
+
+  body.giro-interface
+  .button {
+
+    width:
+      100%;
+  }
+
+  body.giro-interface
+  .section {
+
+    padding:
+      4rem 0;
+  }
+
+  body.giro-interface
+  .activity-card,
+  body.giro-interface
+  .card,
+  body.giro-interface
+  .support-grid article {
+
+    border-radius:
+      1.15rem;
+  }
+}
+/* =========================================================
+   CURSOR LIGHT
+   ========================================================= */
+
+.giro-hero {
+
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+}
+
+.giro-hero::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+  background:
+    radial-gradient(
+      circle 180px
+      at var(--cursor-x) var(--cursor-y),
+      rgba(255,255,255,.055),
+      transparent 70%
+    );
+
+  opacity:
+    .75;
+
+  transition:
+    opacity 200ms ease;
 }
