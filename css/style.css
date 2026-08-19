@@ -4350,3 +4350,43 @@ body.giro-interface .admin-section .card {
 .card:hover::after {
   opacity: 1;
 }
+/* =========================================================
+   GIRO — FUNDO GLOBAL
+   ========================================================= */
+
+body.giro-interface {
+  background:
+    radial-gradient(
+      circle at 8% 85%,
+      rgba(0, 184, 217, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 30%,
+      rgba(120, 80, 220, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #02030a 0%,
+      #03151d 50%,
+      #070719 100%
+    );
+
+  background-attachment: fixed;
+}
+
+
+/* Todas las seções principais ficam transparentes */
+
+body.giro-interface .section,
+body.giro-interface .section-white {
+  background: transparent;
+}
+
+
+/* Evita que blocos antigos criem faixas claras */
+
+body.giro-interface main {
+  background: transparent;
+}
