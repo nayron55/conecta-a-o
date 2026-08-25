@@ -4429,12 +4429,12 @@ body.giro-interface main {
    CORREÇÃO — ACESSO ADMINISTRATIVO
    ========================================================= */
 
-/* Labels */
+/* Labels — VERDE MAÇÃ */
 #admin-login #login-form label {
-    color: #7CFF4F !important;
+    color: #8CFF3D !important;
 }
 
-/* Texto digitado */
+/* Texto digitado — BRANCO */
 #admin-login #login-form input,
 #admin-login #login-form input[type="email"],
 #admin-login #login-form input[type="password"] {
