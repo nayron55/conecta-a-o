@@ -4425,3 +4425,38 @@ body.giro-interface main {
   }
 
 }
+/* =========================================================
+   CORREÇÃO — ACESSO ADMINISTRATIVO
+   ========================================================= */
+
+/* Labels */
+#admin-login #login-form label {
+    color: #7CFF4F !important;
+}
+
+/* Texto digitado */
+#admin-login #login-form input,
+#admin-login #login-form input[type="email"],
+#admin-login #login-form input[type="password"] {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    caret-color: #FFFFFF !important;
+}
+
+/* Texto de exemplo / placeholder */
+#admin-login #login-form input::placeholder {
+    color: rgba(255, 255, 255, 0.65) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Borda dos campos */
+#admin-login #login-form input {
+    border-color: rgba(80, 220, 210, 0.55) !important;
+}
+
+/* Autofill do navegador */
+#admin-login #login-form input:-webkit-autofill,
+#admin-login #login-form input:-webkit-autofill:hover,
+#admin-login #login-form input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #FFFFFF !important;
+}
