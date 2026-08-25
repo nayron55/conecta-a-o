@@ -4390,3 +4390,25 @@ body.giro-interface .section-white {
 body.giro-interface main {
   background: transparent;
 }
+/* =========================================================
+   CORREÇÃO MOBILE — REMOVER LUNAS DECORATIVAS DO HERO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Remove as formas decorativas grandes do Hero */
+  .hero::before,
+  .hero::after {
+    display: none !important;
+  }
+
+  /* Caso as formas sejam elementos HTML */
+  .hero .hero-decoration,
+  .hero .decorative-circle,
+  .hero .hero-orbit,
+  .hero .orb,
+  .hero .shape {
+    display: none !important;
+  }
+
+}
