@@ -4412,3 +4412,16 @@ body.giro-interface main {
   }
 
 }
+/* =========================================================
+   REMOVER LUNAS DECORATIVAS DEL HERO NO CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero::before,
+  .hero::after {
+    display: none !important;
+    content: none !important;
+  }
+
+}
